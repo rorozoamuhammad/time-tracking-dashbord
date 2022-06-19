@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+:root {
+    --work: hsl(15, 100%, 70%);
+    --play: hsl(195, 74%, 62%);
+    --study: hsl(348, 100%, 68%);
+    --exercise: hsl(145, 58%, 55%);
+    --social: hsl(264, 64%, 52%);
+    --self-care: hsl(43, 84%, 65%);
+    --head: hsl(246, 80%, 60%);
+    --bg: hsl(226, 43%, 10%);
+    --bg-card: hsl(235, 46%, 20%);
+    --text: hsl(235, 45%, 61%);
+    --text-click: hsl(236, 100%, 87%);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+    background-color: var(--bg);
+    font-size: 18px;
+    color: var(--text-click);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-content: center;
+    align-items: center;
+}
+
+/* bagian kiri gambar */
+section header {
+    background-color: var(--bg-card);
+    width: 80%;
+    border-radius: 10px;
+    height: 100%;
+    margin: auto;
+}
+
+section header .gambar {
+    background-color: var(--head);
+    padding: 1em;
+    border-radius: 10px;
+}
+
+section header .gambar .mob p {
+    font-size: .8em;
+    font-weight: 300;
+}
+
+section header .gambar .mob h1 {
+    font-weight: 400;
+    margin-top: -.5em;
+    font-size: 2em;
+}
+
+section header .gambar img {
+    width: 35%;
+    border-radius: 50%;
+    border: 4px solid var(--text-click);
+    margin-bottom: .5em;
+}
+
+section header .text {
+    padding: 0 1em;
+    font-weight: 400;
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+section header .text p:nth-child(1) {
+    color: var(--text-click);
+}
+
+section header .text p:hover {
+    cursor: pointer;
+    color: var(--text-click);
+}
+
+/* bagian kanan */
+
+section article {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+}
+
+section article .pertama,
+section article .dua,
+section article .tiga,
+section article .empat,
+section article .lima,
+section article .enam {
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+section article .pertama {
+    background-color: var(--work);
+}
+
+section article .dua {
+    background-color: var(--play);
+}
+
+section article .tiga {
+    background-color: var(--study);
+}
+
+section article .empat {
+    background-color: var(--exercise);
+}
+
+section article .lima {
+    background-color: var(--social);
+}
+
+section article .enam {
+    background-color: var(--self-care);
+}
+
+section article img {
+    width: 30%;
+    position: absolute;
+    top: -.5em;
+    right: .5em;
+}
+
+section article .empat img {
+    top: 0;
+}
+
+section article .pertama .tulisan,
+section article .dua .tulisan,
+section article .tiga .tulisan,
+section article .empat .tulisan,
+section article .lima .tulisan,
+section article .enam .tulisan {
+    background-color: var(--bg-card);
+    padding: .5em 1em;
+    margin-top: 2.3em;
+    position: relative;
+    border-radius: 10px;
+    transition: 500ms;
+}
+
+section article .pertama .tulisan:hover,
+section article .dua .tulisan:hover,
+section article .tiga .tulisan:hover,
+section article .empat .tulisan:hover,
+section article .lima .tulisan:hover,
+section article .enam .tulisan:hover {
+    cursor: pointer;
+    background-color: var(--head);
+}
+
+section article .pertama .tulisan .desk p,
+section article .dua .tulisan .desk p,
+section article .tiga .tulisan .desk p,
+section article .empat .tulisan .desk p,
+section article .lima .tulisan .desk p,
+section article .enam .tulisan .desk p {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+section article .tulisan img {
+    width: 10%;
+    margin-top: 2.5em;
+    padding: 0 1em;
+    cursor: pointer;
+}
+
+section article .pertama .tulisan h1,
+section article .dua .tulisan h1,
+section article .tiga .tulisan h1,
+section article .empat .tulisan h1,
+section article .lima .tulisan h1,
+section article .enam .tulisan h1 {
+    font-size: 2.5em;
+    font-weight: 400;
+    margin: 0;
+}
+
+section article .pertama .tulisan p,
+section article .dua .tulisan p,
+section article .tiga .tulisan p,
+section article .empat .tulisan p,
+section article .lima .tulisan p,
+section article .enam .tulisan p {
+    font-size: .7em;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 576px) {
+
+    body {
+        width: auto;
+        height: auto;
+    }
+
+    section {
+        grid-template-columns: 1fr;
+        margin: 5vh 0;
+    }
+
+    section header {
+        height: auto;
+    }
+
+    section header .gambar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    section header .gambar .mob h1 {
+        font-size: 1.1em;
+    }
+
+    section header .text {
+        flex-direction: row;
+    }
+
+    section article {
+        grid-template-columns: 1fr;
+    }
+
+    section article .tulisan .center {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    section article .pertama,
+    section article .dua,
+    section article .tiga,
+    section article .empat,
+    section article .lima,
+    section article .enam {
+        position: absolute;
+        width: 80%;
+        top: 15em;
+        right: 11vw;
+    }
+
+    section article .dua {
+        top: 26em;
+    }
+
+    section article .tiga {
+        top: 37em;
+    }
+
+    section article .empat {
+        top: 48em;
+    }
+
+    section article .lima {
+        top: 59em;
+    }
+
+    section article .enam {
+        top: 70em;
+    }
+}
